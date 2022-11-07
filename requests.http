@@ -27,3 +27,6 @@ DELETE http://localhost:3000/users/4
 
 ### EXERCISE INDEX
 GET http://localhost:3000/exercises
+
+### EXERCISES SHOW
+GET http://localhost:3000/exercises/2
