@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create!(name: "Robbie", email: "robbie@test.com", password_digest: "password")
+User.create!(name: "Robbie", email: "robbie@test.com", password: "password", password_confirmation: "password")
 
-User.create!(name: "Joey", email: "joey@test.com", password_digest: "password")
+User.create!(name: "Joey", email: "joey@test.com", password: "password", password_confirmation: "password")
 
-User.create!(name: "Kevin", email: "kevin@test.com", password_digest: "password")
+User.create!(name: "Kevin", email: "kevin@test.com", password: "password", password_confirmation: "password")
 
 Exercise.create!(name: "Barbell Bench Press", description: "Stack weights on barbell. Lay beneath it with the bottom of your chest lined up to the bar. Bring it down to your chest, push it back up. Keep your elbows at about a 45 degree angle and your back flat. Use your legs to anchor you, and push down on your shoulderblades.", image_url: "https://s3.amazonaws.com/prod.skimble/assets/2289486/image_iphone.jpg", video_url: "https://youtu.be/rT7DgCr-3pg")
 

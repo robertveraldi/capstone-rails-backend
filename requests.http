@@ -58,3 +58,12 @@ GET http://localhost:3000/routines/2
 
 ### ROUTINES INDEX
 GET http://localhost:3000/routines
+
+### SESSIONS CREATE (LOGIN)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "robbie@test.com",
+  "password": "password"
+}
