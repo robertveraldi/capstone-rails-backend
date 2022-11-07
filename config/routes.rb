@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   delete "/routines/:id" => "routines#destroy"
   get "routines/:id" => "routines#show"
   get "/routines" => "routines#index"
+
+  post "/sessions" => "sessions#create"
 end
