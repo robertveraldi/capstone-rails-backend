@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   post "/users" => "users#create"
   patch "/users/:id" => "users#update"
+  delete "/users/:id" => "users#destroy"
 end
