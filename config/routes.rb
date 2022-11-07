@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get "/exercises/:id" => "exercises#show"
 
   post "/routines" => "routines#create"
+  patch "/routines/:id" => "routines#update"
 end
