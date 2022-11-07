@@ -17,3 +17,7 @@ Content-Type: application/json
   "name": "Gregory",
   "email": "gregory@test.com"
 }
+
+### USER DESTROY
+
+DELETE http://localhost:3000/users/4
