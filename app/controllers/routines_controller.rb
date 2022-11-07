@@ -16,5 +16,8 @@ class RoutinesController < ApplicationController
   def update
     routine = Routine.find_by(id: params[:id])
     routine.reps = params[:reps] || routine.reps
+    routine.save
+
+    render json: { message: "Routine successfully updated." }
   end
 end
