@@ -1,0 +1,10 @@
+### USER CREATE
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Greg",
+  "email": "greg@test.com",
+  "password_digest": "password",
+  "image_url": "https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg"
+}
