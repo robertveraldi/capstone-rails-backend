@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  def create
+  def create #need to make it save to current_user.routines
     routine = Routine.create!(
       user_id: params[:user_id],
       exercise_id: params[:exercise_id],
@@ -13,7 +13,7 @@ class RoutinesController < ApplicationController
     end
   end
 
-  def update
+  def update #add current_user functionality
     routine = Routine.find_by(id: params[:id])
     routine.reps = params[:reps] || routine.reps
     routine.save
@@ -21,9 +21,14 @@ class RoutinesController < ApplicationController
     render json: { message: "Routine successfully updated." }
   end
 
-  def destroy
+  def destroy #add current_user functionality
     routine = Routine.find_by(id: params[:id])
     routine.destroy
     render json: { message: "This part of your routine has successfully been removed." }
+  end
+
+  def show
+    routine = Routine.find_by(id: params[:id])
+    render routine
   end
 end
