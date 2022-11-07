@@ -20,4 +20,10 @@ class RoutinesController < ApplicationController
 
     render json: { message: "Routine successfully updated." }
   end
+
+  def destroy
+    routine = Routine.find_by(id: params[:id])
+    routine.destroy
+    render json: { message: "This part of your routine has successfully been removed." }
+  end
 end
