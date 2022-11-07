@@ -30,3 +30,13 @@ GET http://localhost:3000/exercises
 
 ### EXERCISES SHOW
 GET http://localhost:3000/exercises/2
+
+### ROUTINES CREATE
+POST http://localhost:3000/routines
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "exercise_id": 2,
+  "reps": 5
+}
