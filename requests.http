@@ -54,3 +54,6 @@ DELETE http://localhost:3000/routines/1
 
 ### ROUTINES SHOW
 GET http://localhost:3000/routines/2
+
+### ROUTINES INDEX
+GET http://localhost:3000/routines
