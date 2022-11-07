@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     user = User.create!(
       name: params[:name],
       email: params[:email],
-      password_digest: params[:password_digest],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
       image_url: params[:image_url],
     )
 
@@ -19,11 +20,10 @@ class UsersController < ApplicationController
     render json: user
   end
 
-  def update
+  def update #password functionality?
     user = User.find_by(id: params[:id])
     user.name = params[:name] || user.name
     user.email = params[:email] || user.email
-    user.password_digest = params[:password_digest] || user.password_digest
     user.image_url = params[:image_url] || user.image_url
 
     if user.save
