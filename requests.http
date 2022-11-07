@@ -9,6 +9,9 @@ Content-Type: application/json
   "image_url": "https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg"
 }
 
+### USER SHOW
+GET http://localhost:3000/users/1
+
 ### USER UPDATE
 PATCH http://localhost:3000/users/4
 Content-Type: application/json
