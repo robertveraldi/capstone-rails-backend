@@ -27,8 +27,13 @@ class RoutinesController < ApplicationController
     render json: { message: "This part of your routine has successfully been removed." }
   end
 
-  def show
+  def show #do i need this?
     routine = Routine.find_by(id: params[:id])
+    render json: routine
+  end
+
+  def index #add current_user functionality
+    routine = Routine.all
     render json: routine
   end
 end
