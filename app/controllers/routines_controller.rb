@@ -29,6 +29,6 @@ class RoutinesController < ApplicationController
 
   def show
     routine = Routine.find_by(id: params[:id])
-    render routine
+    render json: routine
   end
 end
