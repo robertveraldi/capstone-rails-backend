@@ -48,3 +48,6 @@ Content-Type: application/json
 {
   "reps": "5"
 }
+
+### ROUTINES DESTROY
+DELETE http://localhost:3000/routines/1
