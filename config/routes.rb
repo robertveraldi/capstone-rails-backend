@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   delete "/users/:id" => "users#destroy"
 
   get "/exercises" => "exercises#index"
+  get "/exercises/:id" => "exercises#show"
 end
