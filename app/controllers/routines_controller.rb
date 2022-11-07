@@ -12,4 +12,9 @@ class RoutinesController < ApplicationController
       render json: { error: routine.error.full_messages }
     end
   end
+
+  def update
+    routine = Routine.find_by(id: params[:id])
+    routine.reps = params[:reps] || routine.reps
+  end
 end
