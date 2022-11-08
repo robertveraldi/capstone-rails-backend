@@ -1,10 +1,9 @@
 class RoutinesController < ApplicationController
   before_action :authenticate_user
 
-  def create #need to make it save to current_user.routines
+  def create
     if current_user
       routine = Routine.create!(
-        # user_id: params[:user_id],
         user_id: current_user.id,
         exercise_id: params[:exercise_id],
         reps: params[:reps],
@@ -18,15 +17,20 @@ class RoutinesController < ApplicationController
     end
   end
 
-  def update
-    routine = Routine.find_by(id: params[:id])
-    routine.reps = params[:reps] || routine.reps
-    routine.save
+  def update #need to allow user to only update their own
+    if current_user
+      routine = Routine.find_by(id: params[:id])
+      routine.reps = params[:reps] || routine.reps
 
-    render json: { message: "Routine successfully updated." }
+      if routine.save
+        render json: { message: "Routine successfully updated." }
+      else
+        render json: { error: routine.error.full_messages }
+      end
+    end
   end
 
-  def destroy
+  def destroy #only allow user to destroy their own
     routine = Routine.find_by(id: params[:id])
     routine.destroy
     render json: { message: "This part of your routine has successfully been removed." }
@@ -37,9 +41,8 @@ class RoutinesController < ApplicationController
     render json: routine
   end
 
-  def index #only show current users routines
+  def index
     routine = current_user.routines
-    # routine = Routine.find_by(user_id: current_user.id)
     render json: routine
   end
 end

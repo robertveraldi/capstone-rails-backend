@@ -40,18 +40,17 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "user_id": 2,
-  "exercise_id": 2,
-  "reps": 5
+  "exercise_id": 1,
+  "reps": 20
 }
 
 ### ROUTINES UPDATE
-PATCH http://localhost:3000/routines/1
+PATCH http://localhost:3000/routines/4
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "reps": "5"
+  "reps": "4"
 }
 
 ### ROUTINES DESTROY
@@ -64,7 +63,6 @@ GET http://localhost:3000/routines/2
 ### ROUTINES INDEX
 GET http://localhost:3000/routines
 Authorization: Bearer {{jwt}}
-# make sure this is only showing the current users routines
 
 ### SESSIONS CREATE (LOGIN)
 POST http://localhost:3000/sessions
