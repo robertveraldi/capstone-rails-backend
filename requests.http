@@ -1,7 +1,7 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTIxOTJ9.zTY1APRJlx7LJISPJUVwALR2fMFxobSmhF1MHPl7ubY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMjg1MTV9.UkDJ8VwmV_aGh36NdVTdI-XNL2G-vNjfugQlGqi722I
 
 ### USER CREATE
-POST http://localhost:3000/users
+POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
@@ -13,10 +13,10 @@ Content-Type: application/json
 }
 
 ### USER SHOW
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/1.json
 
 ### USER UPDATE
-PATCH http://localhost:3000/users/4
+PATCH http://localhost:3000/users/4.json
 Content-Type: application/json
 
 {
@@ -29,13 +29,13 @@ DELETE http://localhost:3000/users/4
 
 
 ### EXERCISE INDEX
-GET http://localhost:3000/exercises
+GET http://localhost:3000/exercises.json
 
 ### EXERCISES SHOW
-GET http://localhost:3000/exercises/2
+GET http://localhost:3000/exercises/2.json
 
 ### ROUTINES CREATE
-POST http://localhost:3000/routines
+POST http://localhost:3000/routines.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -45,7 +45,7 @@ Content-Type: application/json
 }
 
 ### ROUTINES UPDATE
-PATCH http://localhost:3000/routines/4
+PATCH http://localhost:3000/routines/4.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
@@ -58,10 +58,10 @@ DELETE http://localhost:3000/routines/1
 Authorization: Bearer {{jwt}}
 
 ### ROUTINES SHOW
-GET http://localhost:3000/routines/2
+GET http://localhost:3000/routines/2.json
 
 ### ROUTINES INDEX
-GET http://localhost:3000/routines
+GET http://localhost:3000/routines.json
 Authorization: Bearer {{jwt}}
 
 ### SESSIONS CREATE (LOGIN)

@@ -42,7 +42,7 @@ class RoutinesController < ApplicationController
   end
 
   def index
-    routine = current_user.routines
-    render json: routine
+    @routines = current_user.routines
+    render template: "routines/index"
   end
 end

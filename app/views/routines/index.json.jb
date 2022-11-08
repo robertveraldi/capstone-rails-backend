@@ -1,0 +1,12 @@
+@routines.map do |routine|
+  {
+    id: routine.id,
+    user_id: routine.user_id,
+    exercise_id: routine.exercise_id,
+    reps: routine.reps,
+    exercise_name: routine.exercise.name,
+    exercise_description: routine.exercise.description,
+    exercise_image: routine.exercise.image_url,
+    exercise_video: routine.exercise.video_url,
+  }
+end
