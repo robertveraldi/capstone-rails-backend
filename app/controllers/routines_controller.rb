@@ -1,19 +1,24 @@
 class RoutinesController < ApplicationController
-  def create #need to make it save to current_user.routines
-    routine = Routine.create!(
-      user_id: params[:user_id],
-      exercise_id: params[:exercise_id],
-      reps: params[:reps],
-    )
+before_action: authenticate_user, except: [:index]
 
-    if routine.save
-      render json: { message: "Exercise added to routine." }
-    else
-      render json: { error: routine.error.full_messages }
+  def create #need to make it save to current_user.routines
+    if current_user
+      routine = Routine.create!(
+        # user_id: params[:user_id],
+        user_id: current_user.id,
+        exercise_id: params[:exercise_id],
+        reps: params[:reps],
+      )
+
+      if routine.save
+        render json: { message: "Exercise added to routine." }
+      else
+        render json: { error: routine.error.full_messages }
+      end
     end
   end
 
-  def update #add current_user functionality
+  def update
     routine = Routine.find_by(id: params[:id])
     routine.reps = params[:reps] || routine.reps
     routine.save
@@ -21,7 +26,7 @@ class RoutinesController < ApplicationController
     render json: { message: "Routine successfully updated." }
   end
 
-  def destroy #add current_user functionality
+  def destroy 
     routine = Routine.find_by(id: params[:id])
     routine.destroy
     render json: { message: "This part of your routine has successfully been removed." }
@@ -32,8 +37,11 @@ class RoutinesController < ApplicationController
     render json: routine
   end
 
-  def index #add current_user functionality
-    routine = Routine.all
-    render json: routine
+  def index #only show current users routines
+    if current_user
+      routine = Routine.all.order(:id)
+      # Routine.find_by(user_id: current_user.id).all
+      render json: routine
+    end
   end
 end

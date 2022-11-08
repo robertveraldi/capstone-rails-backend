@@ -36,6 +36,7 @@ GET http://localhost:3000/exercises/2
 
 ### ROUTINES CREATE
 POST http://localhost:3000/routines
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -46,6 +47,7 @@ Content-Type: application/json
 
 ### ROUTINES UPDATE
 PATCH http://localhost:3000/routines/1
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -54,12 +56,14 @@ Content-Type: application/json
 
 ### ROUTINES DESTROY
 DELETE http://localhost:3000/routines/1
+Authorization: Bearer {{jwt}}
 
 ### ROUTINES SHOW
 GET http://localhost:3000/routines/2
 
 ### ROUTINES INDEX
 GET http://localhost:3000/routines
+# make sure this is only showing the current users routines
 
 ### SESSIONS CREATE (LOGIN)
 POST http://localhost:3000/sessions
