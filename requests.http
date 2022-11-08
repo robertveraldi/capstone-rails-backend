@@ -63,6 +63,7 @@ GET http://localhost:3000/routines/2
 
 ### ROUTINES INDEX
 GET http://localhost:3000/routines
+Authorization: Bearer {{jwt}}
 # make sure this is only showing the current users routines
 
 ### SESSIONS CREATE (LOGIN)

@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-before_action: authenticate_user, except: [:index]
+  before_action :authenticate_user
 
   def create #need to make it save to current_user.routines
     if current_user
@@ -11,9 +11,9 @@ before_action: authenticate_user, except: [:index]
       )
 
       if routine.save
-        render json: { message: "Exercise added to routine." }
+        render json: routine
       else
-        render json: { error: routine.error.full_messages }
+        render json: { error: routine.error.full_messages }, status: :unprocessable_entity
       end
     end
   end
@@ -26,7 +26,7 @@ before_action: authenticate_user, except: [:index]
     render json: { message: "Routine successfully updated." }
   end
 
-  def destroy 
+  def destroy
     routine = Routine.find_by(id: params[:id])
     routine.destroy
     render json: { message: "This part of your routine has successfully been removed." }
@@ -38,10 +38,8 @@ before_action: authenticate_user, except: [:index]
   end
 
   def index #only show current users routines
-    if current_user
-      routine = Routine.all.order(:id)
-      # Routine.find_by(user_id: current_user.id).all
-      render json: routine
-    end
+    routine = current_user.routines
+    # routine = Routine.find_by(user_id: current_user.id)
+    render json: routine
   end
 end
