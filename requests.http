@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTIxOTJ9.zTY1APRJlx7LJISPJUVwALR2fMFxobSmhF1MHPl7ubY
+
 ### USER CREATE
 POST http://localhost:3000/users
 Content-Type: application/json
