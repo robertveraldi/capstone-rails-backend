@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMjg1MTV9.UkDJ8VwmV_aGh36NdVTdI-XNL2G-vNjfugQlGqi722I
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTM1NzB9.LfYcES9ZdgJAXVK09sN1IN2qSlWXxLuh5yQiLQudn3A
 
 ### USER CREATE
 POST http://localhost:3000/users.json
@@ -40,8 +40,8 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "exercise_id": 1,
-  "reps": 20
+  "exercise_id": 3,
+  "reps": 25
 }
 
 ### ROUTINES UPDATE
