@@ -47,7 +47,7 @@ OR rails db:setup
 rails s
 ```
 
-This command initilizes the rails server. Unless you are running another server on port :3000, this server will run on http://localhost:3000.
+This command initilizes the rails server. Unless you are running another server on port :3000, this server will run on http://localhost:3000. To be sure, see the last line output after running this command - 'Listening on...'.
 
 You can test web requests as documented in the `requests.http` file. However, you must be logged in. Run the last request on the page, 'Login', using the already input content. Copy and paste the jwt token into the global jwt variable at the top of the file. Then, test any request. Feel free to change any of the content within POST or PATCH requests.
 
