@@ -29,6 +29,8 @@ This rails project creates the database and lays the foundation for an app that 
 
 This database / API is built using RoR version 7.0.4. It utilizes postgresql, bcrpyt authorization, json web tokens, the jb gem (for generating views), and git. Models with specified relationships have been built for users, exercises, and routines. Currently, the exercises data is static.
 
+[Read about the front end here](https://github.com/robertveraldi/capstone-react-frontend)
+
 <!-- Optional: Add screenshots or gifs of your application -->
 
 ## Installation
