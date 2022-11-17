@@ -25,20 +25,21 @@ Things you may want to cover:
 
 # Gym Routine (Rails)
 
-This rails project creates the database and lays the foundation for an app that allows the end user to browse and learn about different exercises. After creating an account, the user can then build a routine including whichever exercises they'd like. It's a great tool to take the uncertainity out of going to the gym, particularly for those who are just starting their fitness journey. I struggled with starting to work out because I was never sure of a plan for once I was actually in the gym. I've built this with my experience in mind.
+This rails project creates the database and lays the foundation for my app that allows the end user to browse and learn about different exercises. After creating an account, the user can then build a routine including whichever exercises they'd like. It's a great tool to take the uncertainity out of going to the gym, particularly for those who are just starting their fitness journey. I struggled with starting to work out because I was never sure of a plan for once I was actually in the gym. I've built this with my experience in mind.
 
 This database / API is built using RoR version 7.0.4. It utilizes postgresql, bcrpyt authorization, json web tokens, the jb gem (for generating views), and git. Models with specified relationships have been built for users, exercises, and routines. Currently, the exercises data is static.
 
-[Read about the front end here](https://github.com/robertveraldi/capstone-react-frontend)
+Read about the front end [here](https://github.com/robertveraldi/capstone-react-frontend).
 
 <!-- Optional: Add screenshots or gifs of your application -->
 
 ## Installation
 
+Clone this repository down to your computer. It will create a directory on its own, but if you'd prefer it to be within a certain directory, make sure to navigate there first. Then, cd into the directory and run -
+
 ```bash
 bundle install
 rails db:create db:migrate db:seed
-OR rails db:setup
 ```
 
 ## Usage
